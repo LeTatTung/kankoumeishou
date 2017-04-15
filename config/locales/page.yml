@@ -1,0 +1,49 @@
+en:
+  title: 観光名勝 の写真
+  home: Home
+  profile: Profile
+  image_share: Image share
+  most_image: The most images popular
+  about: About
+  about_us: The information of team
+  information: The information of System
+  copyright: Copyright
+  team: 5スパーマン グループ
+  privacy_policy:  Privacy Policy
+  terms: Terms of Use
+  welcome: Welcome To 観光名勝 の写真 System!
+  nice_to: It's Nice To Meet You
+  _student_id: "Student ID: "
+  _class: "Class: "
+  _university: "University: "
+  _position: "Position: "
+  trung:
+    name: Phan Anh Trung
+    student_id: "2013xxxx"
+    class: HEDSPI A K58
+    university: Ha Noi University Science And Technology
+    position: Leader
+  minh:
+    name: Cao Van Minh
+    student_id: "20122071"
+    class: HEDSPI C K58
+    university: Ha Noi University Science And Technology
+    position: Developer
+  nguyen:
+    name: Duong Cong Nguyen
+    student_id: "2013xxxx"
+    class: HEDSPI C K58
+    university: Ha Noi University Science And Technology
+    position: Developer
+  chinh:
+    name: Nguyen Dinh Chinh
+    student_id: "2013xxxx"
+    class: HEDSPI B K58
+    university: Ha Noi University Science And Technology
+    position: Developer
+  tung:
+    name: Le Tat Tung
+    student_id: "20134394"
+    class: HEDSPI C K58
+    university: Ha Noi University Science And Technology
+    position: Developer
