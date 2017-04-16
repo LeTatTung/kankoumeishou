@@ -1,13 +1,13 @@
 en:
   sessions:
     new:
-      title: "Log in"
-      remember: "Remember me on this computer"
-      newuser: "New user"
-      danger: "Invalid email/password combinaion"
-      email_field: "Email address"
-      password_field: "Password"
-      social: "Or Login via"
-      new_here: "New here? "
-    sign_out: Log out
-    sign_in: Log in/ Sign up
+      title: "ログイン"
+      remember: "このコンピュータで覚えている"
+      newuser: "新しいユーザー"
+      danger: "無効の電子メイル/パスワード"
+      email_field: "電子メイル"
+      password_field: "パスワード"
+      social: "通じてログイン"
+      new_here: "はじめて?"
+    sign_out: ログアウト
+    sign_in: ログイン/ サインアップ

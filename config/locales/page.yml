@@ -1,49 +1,49 @@
 en:
   title: 観光名勝 の写真
-  home: Home
-  profile: Profile
-  image_share: Image share
-  most_image: The most images popular
-  about: About
-  about_us: The information of team
-  information: The information of System
-  copyright: Copyright
+  home: ホーム
+  profile: プロフィール
+  image_share: 写真共有
+  most_image: 最も人気がある写真
+  about: アバウト
+  about_us: チーム情報
+  information: システム情報
+  copyright: 著作権
   team: 5スパーマン グループ
-  privacy_policy:  Privacy Policy
-  terms: Terms of Use
-  welcome: Welcome To 観光名勝 の写真 System!
-  nice_to: It's Nice To Meet You
-  _student_id: "Student ID: "
-  _class: "Class: "
-  _university: "University: "
-  _position: "Position: "
+  privacy_policy:  個人情報保護方針
+  terms: 利用規約
+  welcome: ようこそ 観光名勝 の写真!
+  nice_to: お会い出来て嬉しいです
+  _student_id: "学生番号: "
+  _class: "クラス: "
+  _university: "大学: "
+  _position: "ポジション: "
   trung:
     name: Phan Anh Trung
-    student_id: "2013xxxx"
+    student_id: "20134183"
     class: HEDSPI A K58
-    university: Ha Noi University Science And Technology
-    position: Leader
+    university: ハノイ工科大学
+    position: リーダー
   minh:
     name: Cao Van Minh
     student_id: "20122071"
     class: HEDSPI C K58
-    university: Ha Noi University Science And Technology
-    position: Developer
+    university: ハノイ工科大学
+    position: 開発者
   nguyen:
     name: Duong Cong Nguyen
-    student_id: "2013xxxx"
+    student_id: "20132812"
     class: HEDSPI C K58
-    university: Ha Noi University Science And Technology
-    position: Developer
+    university: ハノイ工科大学
+    position: 開発者
   chinh:
     name: Nguyen Dinh Chinh
-    student_id: "2013xxxx"
+    student_id: "20111243"
     class: HEDSPI B K58
-    university: Ha Noi University Science And Technology
-    position: Developer
+    university: ハノイ工科大学
+    position: 開発者
   tung:
     name: Le Tat Tung
     student_id: "20134394"
     class: HEDSPI C K58
-    university: Ha Noi University Science And Technology
-    position: Developer
+    university: ハノイ工科大学
+    position: サブリーダー
