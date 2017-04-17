@@ -45,7 +45,7 @@
                 <% if devise_mapping.registerable? && controller_name != "registrations" %>
                   <%= t "sessions.new.new_here" %>
                   <b>
-                    <%= link_to t(:sign_up),
+                    <%= link_to t("signup.sign_up"),
                       new_registration_path(resource_name) %>
                   </b>
                 <% end %>

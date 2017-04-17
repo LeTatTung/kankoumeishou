@@ -18,31 +18,31 @@ en:
   _university: "大学: "
   _position: "ポジション: "
   trung:
-    name: Phan Anh Trung
+    name: ファン・アイン・チュン
     student_id: "20134183"
     class: HEDSPI A K58
     university: ハノイ工科大学
     position: リーダー
   minh:
-    name: Cao Van Minh
+    name: カオ・ヴァン・ミン
     student_id: "20122071"
     class: HEDSPI C K58
     university: ハノイ工科大学
     position: 開発者
   nguyen:
-    name: Duong Cong Nguyen
+    name: ズォン・コン・グエン
     student_id: "20132812"
     class: HEDSPI C K58
     university: ハノイ工科大学
     position: 開発者
   chinh:
-    name: Nguyen Dinh Chinh
+    name: グエン・ディン・チン
     student_id: "20111243"
     class: HEDSPI B K58
     university: ハノイ工科大学
     position: 開発者
   tung:
-    name: Le Tat Tung
+    name: レー・タット・トゥン
     student_id: "20134394"
     class: HEDSPI C K58
     university: ハノイ工科大学
