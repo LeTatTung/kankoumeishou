@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Upload by : </strong>
+  <%= @image.user.email %>
+</p>
+
+<p>
+  <strong>Address : </strong>
+  <%= @image.address %>
+</p>
+
+<p>
+  <strong>File : </strong><br>
+  <%= image_tag @image.image %>
+</p>
+<p>
+  <strong>Category : </strong>
+  <%= @image.category.name %>
+</p>
+<p>
+  <strong>Like : </strong>
+  <%= @image.like_number %>
+</p>
+<p>
+  <strong>Created at : </strong>
+  <%= @image.created_at %>
+</p>
+<p>
+  <strong>Update at : </strong>
+  <%= @image.updated_at %>
+</p>

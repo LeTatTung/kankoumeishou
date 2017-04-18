@@ -367,7 +367,6 @@ body {
 }
 .navbar-custom .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
   color: white;
@@ -484,4 +483,52 @@ ul.navbar-right {
 
 .ltt-navbar {
   max-height: 100px;
+}
+
+.dropdown-toggle {
+  background-color: transparent !important;
+}
+
+.dropdown-menu {
+  background-color: gray !important;
+  color: white;
+}
+
+.form-create-image {
+  margin-left: 25%;
+  margin-right: 25%;
+
+   .image-field {
+    margin-bottom: 10px;
+
+    label {
+      font-size: 16px;
+    }
+
+    .image-description {
+      min-height: 200px;
+    }
+   }
+
+  .actions {
+    border: 2px !important;
+    text-align: center;
+
+    .btn-create {
+      float: right;
+    }
+
+    .btn-cancel {
+      margin-right: 10px;
+      float: right;
+      color: white;
+    }
+  }
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
 }
