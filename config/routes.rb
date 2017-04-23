@@ -9,8 +9,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :images
-<<<<<<< HEAD
-
-=======
->>>>>>> fe854935df007a8da07b1912bee37f3dac4787d5
+  resources :comments
 end

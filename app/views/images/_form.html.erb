@@ -1,4 +1,4 @@
-<h1><%= t "upload_image" %></h1>
+<h1><%= @image.address ? t("update_image") : t("upload_image") %></h1>
 <%= form_for(@image) do |f| %>
   <div class="form-create-image">
   <% if @image.errors.any? %>
@@ -30,8 +30,10 @@
       <%= f.text_area :description, class: "form-control image-description" %>
     </div>
     <div class="actions">
-      <%= f.submit t("upload"), class: "btn btn-primary btn-create" %>
-      <%= link_to t("cancel"), root_path, class: "btn btn-danger btn-cancel" %>
+      <%= f.submit @image.address ? t("update") : t("upload"),
+        class: "btn btn-primary btn-create" %>
+      <%= link_to t("cancel"), @image.address ? @image : root_path,
+        class: "btn btn-danger btn-cancel" %>
     </div>
   </div>
 <% end %>

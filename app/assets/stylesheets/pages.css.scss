@@ -7,7 +7,7 @@
   background-position: center center;
 }
 .ltt-header .ltt-navbar {
-  background-color: transparent;
+  background-color: #222222;
   border: none;
 }
 
@@ -487,6 +487,9 @@ ul.navbar-right {
 
 .dropdown-toggle {
   background-color: transparent !important;
+  &:hover {
+    color: #fed136 !important;
+  }
 }
 
 .dropdown-menu {
@@ -531,4 +534,10 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+}
+
+.col-xs-50 {
+  .form-control {
+    height: 50px !important;
+  }
 }
