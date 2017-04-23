@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   }
   root "pages#index"
   get "/pages/:page", to: "pages#show"
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 end

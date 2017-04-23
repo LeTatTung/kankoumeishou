@@ -1,6 +1,9 @@
 <% rela1 = Relationship.where(followed_id: @user.id) %>
 <% rela2 = Relationship.where(follower_id: @user.id) %>
 <div class="container" style="margin-top: 20px;">
+	<%= link_to "ホーム", root_url, class: 'btn btn-info' %>
+</div>
+<div class="container" style="margin-top: 20px;">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="thumbnail" style="border: none;">
@@ -21,7 +24,7 @@
 		</div>
 		<div class="col-md-4">
 			<div class="row">
-				<%= link_to "プロフィールを編集", edit_user_registration_path, class: 'btn btn-info' %>
+				<%= link_to "プロフィールを編集", edit_user_path, class: 'btn btn-info' %>
 			</div>
 			<div class="row">
 				フォロウィング:<br/>
@@ -35,7 +38,39 @@
 
 	<h1 style="color: #333;">最近アップロードした</h1>
 	<div class="row">
-		<div class="col-md-4"> 
+
+		<% @image.each do |img| %>
+			<div class="col-md-4"> 
+				<div class="thumbnail">
+					<%= image_tag("image1.jpg") %>
+					<div class="caption cpt">
+						<%= link_to "編集", '#' %>
+					</div>
+					<div class="caption cpt">
+						<%= link_to "削除", '#' %>
+					</div>
+					<div class="caption">
+						<% str="nahfnanhfjanfhanfjanfjanjfnjafnjanfjanfjanjfa" %>
+						<div>
+							<% if str.length > 25 %>
+								<%= truncate(str, length: 25) %>
+								<%= link_to 'Read more', '', id: "read-more-#{img.id}" %>
+								<script>
+								  $('#read-more-<%= img.id %>').on('click', function(e) {
+								    e.preventDefault()
+								    $(this).parent().html('<%= escape_javascript str %>')
+								  })
+								</script>
+							<% else %>
+								<%= str %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+
+		<!-- <div class="col-md-4"> 
 			<div class="thumbnail">
 				<%= image_tag("image1.jpg") %>
 				<div class="caption cpt">
@@ -63,22 +98,7 @@
 					Mo ta
 				</div>
 			</div>
-		</div>
-
-		<div class="col-md-4"> 
-			<div class="thumbnail">
-				<%= image_tag("image1.jpg") %>
-				<div class="caption cpt">
-					<%= link_to "編集", '#' %>
-				</div>
-				<div class="caption cpt">
-					<%= link_to "削除", '#' %>
-				</div>
-				<div class="caption">
-					Mo ta
-				</div>
-			</div>
-		</div>
+		</div> -->
 
 		<!-- Neu hien thi them thi cho vong lap vao -->
 	</div>
