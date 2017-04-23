@@ -17,7 +17,7 @@ class User < ApplicationRecord
     if: :email_changed?
   # validates_presence_of :password, if: :password_required?
   # validates_confirmation_of :password, if: :password_required?
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :password, presence: true, length: { minimum: 6 }
   # validates_length_of :password, within: Devise.password_length,
   #   allow_blank: true
 end

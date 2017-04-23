@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  new_image: "新しい写真"
+  address: "アドレス"
+  category: "カテゴリー"
+  image: "イメージ"
+  description: "説明"
+  upload_image: "写真をアップロード"
+  upload: "アップロード"
+  cancel: "キャンセル"
