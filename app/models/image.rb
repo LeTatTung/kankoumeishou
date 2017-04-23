@@ -11,5 +11,8 @@ class Image < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true
   validates :image, presence: true
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe854935df007a8da07b1912bee37f3dac4787d5
 end
