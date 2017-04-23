@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? && !@user && !@image %>
+    <% if user_signed_in? && !@user %>
       <div class="ltt-header">
         <%= render "layouts/header" %>
       </div>
