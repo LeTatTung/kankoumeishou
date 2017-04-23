@@ -1,9 +1,7 @@
 <% rela1 = Relationship.where(followed_id: @user.id) %>
 <% rela2 = Relationship.where(follower_id: @user.id) %>
-<div class="container" style="margin-top: 20px;">
-	<%= link_to "ホーム", root_url, class: 'btn btn-info' %>
-</div>
-<div class="container" style="margin-top: 20px;">
+
+<div class="container show-user-info">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="thumbnail" style="border: none;">
@@ -42,7 +40,7 @@
 		<% @user.images.each do |img| %>
 			<div class="col-md-4"> 
 				<div class="thumbnail">
-					<%= image_tag("#{img.image_url}") %>
+					<%= link_to image_tag(img.image), img %>
 					<div class="caption cpt">
 						<%= link_to "編集", edit_image_path(img.id) %>
 					</div>

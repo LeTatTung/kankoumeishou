@@ -1,5 +1,5 @@
-<div class="container" style="margin-top: 150px">
+<div class="container show-image-comment">
   <%= render "form" %>
 </div>
 <%= render "pages/image_share" %>
-<%= render "pages/about" %>
+<%= render "pages/about" if request.fullpath == root_path %>
