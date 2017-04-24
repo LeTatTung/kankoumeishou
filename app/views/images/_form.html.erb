@@ -22,7 +22,7 @@
     </div>
     <div class="image-field">
       <%= f.label :category_id, title = t("category") %>
-      <%= f.select :category_id, @categories.collect{|category| 
+      <%= f.select :category_id, @categories.map{|category| 
         [category.name, category.id]}, {}, class: "form-control" %>
     </div>
     <div class="image-field">
