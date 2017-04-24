@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find_by(id: params[:id])
-		@image = User.all
+		# @image = User.all
 	end
 	def edit
 		@user = User.find_by(id: params[:id])
