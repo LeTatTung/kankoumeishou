@@ -13,7 +13,7 @@ gem "bootstrap-sass", "3.2.0.0"
 gem "font-awesome-rails"
 gem "config"
 gem "devise"
-
+gem "carrierwave"
 group :development, :test do
   gem "byebug", platform: :mri
 end

@@ -1,0 +1,39 @@
+<h1><%= @image.address ? t("update_image") : t("upload_image") %></h1>
+<%= form_for(@image) do |f| %>
+  <div class="form-create-image">
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %>
+        prohibited this image from being saved:</h2>
+      <ul>
+      <% @image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="image-field">
+      <%= f.label :address, title = t("address") %>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+    <div class="image-field">
+      <%= f.label :image, title = t("image") %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="image-field">
+      <%= f.label :category_id, title = t("category") %>
+      <%= f.select :category_id, @categories.map{|category| 
+        [category.name, category.id]}, {}, class: "form-control" %>
+    </div>
+    <div class="image-field">
+      <%= f.label :description, title = t("description") %>
+      <%= f.text_area :description, class: "form-control image-description" %>
+    </div>
+    <div class="actions">
+      <%= f.submit @image.address ? t("update") : t("upload"),
+        class: "btn btn-primary btn-create" %>
+      <%= link_to t("cancel"), @image.address ? @image : root_path,
+        class: "btn btn-danger btn-cancel" %>
+    </div>
+  </div>
+<% end %>
