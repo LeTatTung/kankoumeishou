@@ -9,6 +9,7 @@ class ImagesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = Comment.find_by image_id: @image.id, parent_id: 0
+    @liked = Like.find_by image_id: @image.id, user_id: current_user.id
   end
 
   def new

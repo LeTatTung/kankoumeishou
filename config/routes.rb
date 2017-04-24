@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: "registrations"
   }
@@ -10,5 +11,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :images
   resources :comments
+  resources :likes, only: [:create, :destroy]
 
 end
