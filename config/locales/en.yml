@@ -36,6 +36,7 @@ en:
   update: "アップデイト"
   show: "ショー"
   edit: "エディット"
+  edit_user: "更新ユーザー"
   delete: "デリート"
   back: "バック"
   comment: "コメント"
@@ -43,6 +44,9 @@ en:
   like_number: "好きな数"
   list_images: "イメージ一覧"
   list_comments: "コメント一覧"
+  nickname: "ニックネーム : "
+  email: "電子メイル"
+  password: "パスワード" 
   message:
     success_created_image: "Image was successfully created."
     success_updated_image: "Image was successfully updated."

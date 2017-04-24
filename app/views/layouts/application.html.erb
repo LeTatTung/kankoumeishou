@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? && !@user %>
+    <% if user_signed_in? %>
       <div class="ltt-header">
         <%= render "layouts/header" %>
       </div>
@@ -25,10 +25,8 @@
         <%= yield %>
       </div>
     </div>
-    <% if user_signed_in? && !@user %>
-      <footer class="footer">
-        <%= render "layouts/footer" %>
-      </footer>
-    <% end %>
+    <footer class="footer">
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>

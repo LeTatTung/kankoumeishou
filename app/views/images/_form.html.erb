@@ -13,27 +13,27 @@
     </div>
   <% end %>
     <div class="image-field">
-      <%= f.label :address, title = t("address") %>
+      <%= f.label :address, title = t("address"), class: "lead" %>
       <%= f.text_field :address, class: "form-control" %>
     </div>
     <div class="image-field">
-      <%= f.label :image, title = t("image") %>
+      <%= f.label :image, title = t("image"), class: "lead" %>
       <%= f.file_field :image %>
     </div>
     <div class="image-field">
-      <%= f.label :category_id, title = t("category") %>
+      <%= f.label :category_id, title = t("category"), class: "lead" %>
       <%= f.select :category_id, @categories.map{|category| 
         [category.name, category.id]}, {}, class: "form-control" %>
     </div>
     <div class="image-field">
-      <%= f.label :description, title = t("description") %>
+      <%= f.label :description, title = t("description"), class: "lead" %>
       <%= f.text_area :description, class: "form-control image-description" %>
     </div>
     <div class="actions">
       <%= f.submit @image.address ? t("update") : t("upload"),
-        class: "btn btn-primary btn-create" %>
+        class: "btn btn-primary btn-create btn-lg" %>
       <%= link_to t("cancel"), @image.address ? @image : root_path,
-        class: "btn btn-danger btn-cancel" %>
+        class: "btn btn-danger btn-cancel btn-lg" %>
     </div>
   </div>
 <% end %>
