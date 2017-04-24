@@ -10,12 +10,12 @@ class UsersController < ApplicationController
 		@user = User.find_by(id: params[:id])
 		if @user.update_attributes(params_user)
 			flash.now[:success] = "Your profile is successfull updated"
+			bypass_sign_in @user
       redirect_to @user
 		else
 			render 'edit'
 		end
 	end
-
 	private
 	def params_user
 		params.require(:user).permit(:name,:email,:password,:password_confirmation)

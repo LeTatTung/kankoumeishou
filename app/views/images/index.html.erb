@@ -20,7 +20,7 @@
         <tr>
           <td><%= image.user_id %></td>
           <td><%= image.address %></td>
-          <td><%= link_to image_tag(image.image), image %></td>
+          <td><%= link_to image_tag(image.image, style: 'max-width: 550px;'), image %></td>
           <td><%= image.like_number %></td>
           <td><%= image.description %></td>
           <td><%= image.created_at %></td>
