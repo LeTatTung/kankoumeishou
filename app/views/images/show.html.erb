@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @image.user.email %>
+</p>
+
+
+<p>
+  <strong>File:</strong>
+  <%= image_tag @image.file %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @image.created_at %>
+</p>
