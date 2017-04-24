@@ -43,6 +43,8 @@ en:
   like_number: "好きな数"
   list_images: "イメージ一覧"
   list_comments: "コメント一覧"
+  like: "ライク"
+  liked : "ライクした"
   message:
     success_created_image: "Image was successfully created."
     success_updated_image: "Image was successfully updated."
