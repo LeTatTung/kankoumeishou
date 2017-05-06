@@ -10,6 +10,7 @@ class User < ApplicationRecord
     foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :like_images
 
   validates_presence_of :email, if: :email_required?
   validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
@@ -20,4 +21,5 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   # validates_length_of :password, within: Devise.password_length,
   #   allow_blank: true
+  
 end

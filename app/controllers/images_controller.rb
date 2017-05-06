@@ -7,8 +7,10 @@ class ImagesController < ApplicationController
   end
 
   def show
+    @like_image = LikeImage.new
     @comment = Comment.new
     @comments = Comment.find_by image_id: @image.id, parent_id: 0
+    @image.like_number = @image.like_images.count
   end
 
   def new
