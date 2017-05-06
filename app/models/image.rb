@@ -5,7 +5,7 @@ class Image < ApplicationRecord
   belongs_to :category
 
   has_many :comment, -> { order "created_at DESC"}
-  
+  has_many :like_images
   validates :user, presence: true
   validates :address, presence: true
   validates :category, presence: true
