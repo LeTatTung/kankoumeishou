@@ -1,0 +1,2 @@
+module LikeImagesHelper
+end

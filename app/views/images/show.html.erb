@@ -29,9 +29,15 @@
     </div>
     <div class="col-md-3"></div>
     <div class="show-like col-md-3">
-      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-      <%= link_to t("like"), "#", class: "btn-link" %>
-    </div>
+      <% if LikeImage.where(user_id: current_user.id, image_id: @image.id).exists? %> <!-- if current user liked this image -->
+        <%= link_to t("like"), '#', class: "btn btn-success" %>                       <!-- cannot like anymore -->
+      <% else %>                                                                      <!-- if current user haven't liked this image -->
+        <%= form_for(@like_image) do |f| %>
+         <%= f.hidden_field :image_id, value: @image.id %>
+         <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
+      <% end %>
+      </div>
+    <% end %>
     <div class="show-category col-md-6">
       <%= t "category" %> : 
       <%= link_to @image.category.name, "#", class: "btn-link" %>
