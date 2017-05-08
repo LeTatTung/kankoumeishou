@@ -21,6 +21,13 @@ class LikeImagesController < ApplicationController
     end
     
     def destroy
+      @like_image = LikeImage.find(params[:id])
+      url = "/images/" + @like_image.image_id.to_s
+      @like_image.destroy
+      respond_to do |format|
+        format.html { redirect_to url, notice: t("message.success_deleted_image_like_image") }
+        format.json { head :no_content }
+      end
     end    
     
     private
