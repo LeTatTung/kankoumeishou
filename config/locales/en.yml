@@ -34,10 +34,10 @@ en:
   setting: "セッティング"
   update_image: "写真をアップデイト"
   update: "アップデイト"
-  show: "ショー"
-  edit: "エディット"
+  show: "表わす"
+  edit: "編集"
   edit_user: "更新ユーザー"
-  delete: "デリート"
+  delete: "削除"
   back: "バック"
   comment: "コメント"
   upload_by: "アップロード者"
@@ -48,6 +48,7 @@ en:
   email: "電子メイル"
   password: "パスワード" 
   like: "いいね!"
+  dislike: "嫌い"
   message:
     success_created_image: "写真が正常に作成されました"
     success_updated_image: "写真が正常に編集されました"
@@ -57,3 +58,92 @@ en:
     success_deleted_image_comment: "コメントが正常に削除されました"
     success_created_image_like_image: "ライクしました"
     success_deleted_image_like_image: "アンライクしました"
+  name: 名前
+  email: 電子メイル
+  password: "パスワード"
+  confirmation: "パスワード確認"
+  title: 観光名勝の写真
+  home: ホーム
+  image_share: 写真共有
+  most_image: 最も人気がある写真
+  about: アバウト
+  about_us: チーム情報
+  information: システム情報
+  copyright: 著作権
+  team: 5スパーマン グループ
+  privacy_policy: 個人情報保護方針
+  terms: 利用規約
+  hello: ようこそ観光名勝の写真!
+  nice-to: お会い出来て嬉しいです
+  news: "新しい"
+  change_avatar: "変更アバター"
+  image:
+    address: "場所"
+    address-katakana: "アドレス"
+    category: "カテゴリー"
+    description: "説明"
+    image: "イメージ"
+    number-images: "写真数 : "
+    image-not-found: "Image not found !"
+    message:
+      success_created_image: "Image was successfully created !"
+      success_updated_image: "Image was successfully updated !"
+      success_deleted_image: "Image was successfully deleted !"
+      success_created_image_comment: "Image comment was successfully created !"
+      success_updated_image_comment: "Image comment was successfully updated !"
+      success_deleted_image_comment: "Image comment was successfully deleted !"
+  signup:
+    sign-up: サインアップ
+  login:
+    danger: "無効の電子メイル/パスワード"
+    log-in: "ログイン"
+    log-out: ログアウト
+    new-user: "新しいユーザー"
+    new-here: "はじめて?"
+    remember-me: "このコンピュータで覚えている"
+    social: "通じてログイン"
+  action:
+    back: "バック"
+    cancel: "キャンセル"
+    comment: "コメント"
+    delete: "削除"
+    edit: "編集"
+    show: "表わす"
+    update: "アップデイト"
+    upload: "アップロード"
+    search: "サーチ"
+  user:
+    edit-user: "更新ユーザー"
+    like-numbers: "好きな数"
+    list-comments: "コメント一覧"
+    list-images: "イメージ一覧"
+    list-users: "ユーザー一覧"
+    new-image: "新しい写真"
+    nickname: "ニックネーム : "
+    profile: "プロフィール"
+    setting: "セッティング"
+    upload-by: "アップロード者"
+    upload-image: "写真をアップロード"
+    update_image: "写真をアップデイト"
+    users: "ユーザー"
+  form_contain: "The form contains"
+  error: "error"
+  user_not_found: "User not found !"
+  sign_up_now: "Sign up now!"
+  error_login: "Invalid email/password combination !"
+  save_changes: "Save changes"
+  update_profile: "Update your profile"
+  profile_updated: "Profile updated !"
+  please-log-in: "Please log in !"
+  all_users: "All users"
+  you_sure: "You sure?"
+  user_deleted: "User deleted !"
+  posted: "Posted "
+  ago: " ago."
+  image-feed: "Image Feed"
+  warning-max-size: "should be less than 5MB"
+  following: "フォロウィング"
+  followers: "フォロワー"
+  unfollow: "Unfollow"
+  follow: "Follow"
+  link-error: "Link-error"

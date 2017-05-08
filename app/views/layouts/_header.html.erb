@@ -21,6 +21,7 @@
             <%= link_to t(:about), "#about", class: "page-scroll" %>
           </li>
         <% end %>
+        <li><%= link_to t("user.list-users"), users_path %></li>
         <li class="active ltt-header-item" id="_menu_action">
           <a href="#" class="dropdown-toggle page-scroll" data-toggle="dropdown"
             title="<%= current_user.name %>">
@@ -31,6 +32,7 @@
             <li>
               <%= link_to t("profile"), user_path(current_user) %>
             </li>
+            <li><%= link_to t("user.setting"), edit_user_path(current_user) %></li>
             <li>
               <%= link_to t("upload_image"), new_image_path %>
             </li>
