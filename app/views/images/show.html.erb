@@ -29,15 +29,17 @@
     </div>
     <div class="col-md-3"></div>
     <div class="show-like col-md-3">
-      <% if LikeImage.where(user_id: current_user.id, image_id: @image.id).exists? %> <!-- if current user liked this image -->
-        <%= link_to t("like"), '#', class: "btn btn-success" %>                       <!-- cannot like anymore -->
+      <% if LikeImage.where(user_id: current_user.id, image_id: @image.id).exists? %><!-- if current user liked this image -->
+        <% LikeImage.where(user_id: current_user.id, image_id: @image.id).each do |like| %>
+          <%= link_to t("like"), like_image_path(like.id), method: :delete, class: "btn btn-success" %>                       <!-- cannot like anymore -->
+        <% end %>
       <% else %>                                                                      <!-- if current user haven't liked this image -->
         <%= form_for(@like_image) do |f| %>
          <%= f.hidden_field :image_id, value: @image.id %>
          <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
+        <% end %>
       <% end %>
       </div>
-    <% end %>
     <div class="show-category col-md-6">
       <%= t "category" %> : 
       <%= link_to @image.category.name, "#", class: "btn-link" %>
