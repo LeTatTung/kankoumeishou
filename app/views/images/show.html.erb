@@ -1,3 +1,8 @@
+<% unless logged_in? %>
+  <div class="ltt-header">
+    <%= render "pages/header_homepage" %>
+  </div>
+<% end %>
 <div class="container show-image-comment">
   <p id="notice"><%= notice %></p>
 
@@ -29,9 +34,16 @@
     </div>
     <div class="col-md-3"></div>
     <div class="show-like col-md-3">
-      <% if LikeImage.where(user_id: current_user.id, image_id: @image.id).exists? %><!-- if current user liked this image -->
-        <% LikeImage.where(user_id: current_user.id, image_id: @image.id).each do |like| %>
-          <%= link_to t("dislike"), like_image_path(like.id), method: :delete, class: "btn btn-success" %>                       <!-- cannot like anymore -->
+      <% if logged_in? %>
+        <% if LikeImage.where(user_id: current_user.id, image_id: @image.id).exists? %><!-- if current user liked this image -->
+          <% LikeImage.where(user_id: current_user.id, image_id: @image.id).each do |like| %>
+            <%= link_to t("dislike"), like_image_path(like.id), method: :delete, class: "btn btn-success" %>                       <!-- cannot like anymore -->
+          <% end %>
+        <% else %>
+        <%= form_for(@like_image) do |f| %>
+          <%= f.hidden_field :image_id, value: @image.id %>
+          <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
+          <% end %>
         <% end %>
       <% else %>                                                                      <!-- if current user haven't liked this image -->
         <%= form_for(@like_image) do |f| %>
@@ -39,7 +51,7 @@
          <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
         <% end %>
       <% end %>
-      </div>
+    </div>
     <div class="show-category col-md-6">
       <%= t "category" %> : 
       <%= link_to @image.category.name, "#", class: "btn-link" %>
@@ -57,7 +69,6 @@
     <% end %>
     <%= link_to t("back"), images_path, class: "btn btn-info" %>
   </div>
-
   <h2><%= t "comment" %></h2>
   <%= form_for(@comment) do |f| %>
     <div class="form-group form-group-lg">
@@ -79,11 +90,7 @@
     <% @image.comment.each do |image_comment| %>
       <div class="show-parent-comment">
         <div class="col-md-1">
-          <% unless image_comment.user.avatar %>
-            <%= image_tag "profile.jpg", class: "img-responsive" %>
-          <% else %>
-            <%= image_tag image_comment.user.avatar, class: "img-responsive" %>
-          <% end %>
+          <%= gravatar_for image_comment.user, size: 40 %>
         </div>
         <div class="col-md-11"><%= image_comment.user.name %> : 
           <%= image_comment.content %></div>
@@ -119,4 +126,4 @@
   </div>
 </div>
 <%= render "pages/image_share" %>
-<%= render "pages/about" if request.fullpath == root_path %>
+<%= render "pages/about" %>

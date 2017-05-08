@@ -1,5 +1,5 @@
 class LikeImagesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :destroy]
+  before_action :authenticate_user!, only: [:new, :destroy, :create]
     
   def new
     @like_image = LikeImage.new

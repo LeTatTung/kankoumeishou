@@ -9,7 +9,7 @@
       <% else %>
         <span><%= link_to t("view-my-profile"), @user %></span>
       <% end %>
-      <span><strong><%= t "image.number-images" %><%= @user.images.count %></strong></span>
+      <span><strong><%= t "number-images" %><%= @user.images.count %></strong></span>
     </section>
     <section class="stats">
       <%= render "shared/stats" %>
@@ -33,5 +33,5 @@
   </div>
 </div>
 <%= render "pages/image_share" %>
-<%= render "pages/about" if request.fullpath == root_path %>
+<%= render "pages/about" %>
 

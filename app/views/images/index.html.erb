@@ -1,8 +1,13 @@
+<% unless logged_in? %>
+  <div class="ltt-header">
+    <%= render "pages/header_homepage" %>
+  </div>
+<% end %>
 <div class="container show-image-comment">
   <p id="notice"><%= notice %></p>
   <h1><%= t "list_images" %></h1>
   <div class="row">
-    <% current_user.images.each do |img| %>
+    <% @images.each do |img| %>
       <div class="col-md-4"> 
         <div class="thumbnail">
           <%= link_to image_tag(img.image), img %>
@@ -39,4 +44,4 @@
 </div>
 
 <%= render "pages/image_share" %>
-<%= render "pages/about" if request.fullpath == root_path %>
+<%= render "pages/about" %>

@@ -78,6 +78,20 @@ h1{
 aside {
   section.user_info {
     margin-top: 20px;
+    margin-bottom: 15px;
+    a {
+      color: #1E90FF;
+      font-size: 18px;
+      &:hover {
+        background-color: white;
+        text-decoration: none;
+        color: #008686;
+      }
+    }
+
+    strong {
+      font-size: 18px;
+    }
   }
   section {
     padding: 10px 0;
@@ -88,7 +102,8 @@ aside {
     }
     span {
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 0px;
+      margin-top: 5px;
       line-height: 1;
     }
     h1 {
@@ -99,11 +114,11 @@ aside {
       margin-top: 0px;
 
       a {
-        color: green;
+        color: #1E90FF;
         &:hover {
           background-color: white;
           text-decoration: none;
-          color: blue;
+          color: #008686;
         }
       }
     }
@@ -130,9 +145,8 @@ aside {
 
 .stats {
   overflow: auto;
-  margin-top: 0;
   padding: 0;
-
+  margin-top: 5px;
   a {
     float: left;
     padding: 0 10px;
@@ -176,10 +190,11 @@ aside {
     border-bottom: 1px solid $gray-lighter;
 
     a {
+      font-size: 18px;
       color: green;
       &:hover {
         background-color: white;
-        color: cyan;
+        color: #008686;
       }
     }
   }
@@ -198,5 +213,53 @@ aside {
     font-size: 20px;
     margin-bottom: 10px;
   }
+
+  btn {
+    font-size: 20px;
+    font-weight: bolder;
+  }
 }
 
+.text-search {
+  margin-left: -40px;
+  margin-top: 40px;
+  border: 0px;
+  
+  #search {
+    border: 0px;
+    margin: 0px;
+    width: 320px;
+    height: 30px !important;
+    font-size: 1.5em;
+  } 
+}
+  
+.search-button {
+  margin-left: -100px;
+  margin-top: 40px;
+  width: 35px;
+  height: 30px;
+  
+  input {
+    height: 30px !important;
+    width: 35px;
+    background-image: url("search_icon.png");
+    background-size: 35px 30px;
+    background-color: white;
+    border: 0px;
+  }
+}
+
+.header-new {
+  .navbar-header {
+    .navbar-brand {
+      
+    }
+  }
+
+  .navbar-collapse {
+    ul {
+     
+    }
+  }
+}
