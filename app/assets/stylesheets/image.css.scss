@@ -1,3 +1,7 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
 .show-address {
   text-align: center;
   font-size: 35px;
@@ -64,4 +68,74 @@
 
 .show-user-info {
   margin-top: 120px;
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+    /* forms */
+  input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  input {
+    height: auto !important;
+  }
+  
+}
+
+.col-md-8 {
+
+  .images {
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+    a {
+
+    }
+
+    li {
+      padding: 10px 0;
+      border-top: 1px solid #e8e8e8;
+      margin-bottom: 10px;
+    }
+    .user {
+      margin-top: 20px;
+      padding-top: 0;
+      margin-bottom: 10px;
+    }
+    .address {
+      display: block;
+      margin-left: 60px;
+      margin-bottom: 10px;
+      img {
+        display: block;
+        padding: 5px 0;
+        width: 600px !important;
+        height: 400px !important;
+      }
+    }
+    .category {
+      display: block;
+      margin-left: 60px;
+      margin-bottom: 10px;
+    }
+    .more {
+      display: block;
+      margin-left: 60px;
+      margin-bottom: 10px;
+    }
+    .timestamp {
+      color: $gray-light;
+      font-size: 15px !important;
+      display: block;
+      margin-left: 60px;
+      margin-bottom: 5px;
+    }
+    .gravatar {
+      float: left;
+      margin-right: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
 }

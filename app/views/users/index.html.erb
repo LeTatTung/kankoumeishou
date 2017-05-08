@@ -1,0 +1,9 @@
+<% provide :title, t("user.list-users") %>
+<h1><%= t "user.list-users" %></h1>
+<%= will_paginate %>
+<ul class="users show-user-info">
+  <%= render @users %>
+</ul>
+<%= will_paginate %>
+<%= render "pages/image_share" %>
+<%= render "pages/about" if request.fullpath == root_path %>

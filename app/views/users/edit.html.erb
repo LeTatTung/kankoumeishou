@@ -1,39 +1,15 @@
-<div class="container update-user-info">
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-			<h1><%= t "edit_user" %></h1>
-			<%= form_for(@user) do |f| %>
-				<%= render "shared/errors" %>
-				<div class="form-group">
-					<%= f.label :nickname, t("nickname") %>
-					<%= f.text_field :name, class: "form-control" %>
-				</div>
-
-				<div class="form-group">
-					<%= f.label :email, t("email") %>
-					<%= f.email_field :email, class: "form-control" %>
-				</div>
-				
-				<div class="form-group">
-					<%= f.label :password, t("password") %>
-					<%= f.password_field :password, class: "form-control" %>
-				</div>
-				
-				<div class="form-group">
-					<%= f.label :パスワード確認 %>
-					<%= f.password_field :password_confirmation, class: "form-control" %>
-				</div>
-
-				<div class="form-group">
-					
-				</div>
-
-				<div class="actions">
-					<%= f.submit "保存", class: "btn btn-primary btn-create" %>
-					<%= link_to t("cancel"), @user, class: "btn btn-danger btn-cancel" %>
-				</div>
-
-			<% end %>
-		</div>
-	</div>
+<% provide :title, t("user.edit-user") %>
+<%= provide :button_text, t("action.update") %>
+<div class="row show-user-info">
+  <h1><%= t "update_profile" %></h1>
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form" %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <%= link_to t("change_avatar"), "http://gravatar.com/emails",
+        target: "_blank" %>
+    </div>
+  </div>
 </div>
+<%= render "pages/image_share" %>
+<%= render "pages/about" if request.fullpath == root_path %>

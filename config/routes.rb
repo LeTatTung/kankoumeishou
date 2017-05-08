@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   root "pages#index"
   get "/pages/:page", to: "pages#show"
 
-  resources :users, only: [:show, :edit, :update]
-
-  resources :users, only: [:show]
+  resources :users do
+    resources :relationships, only: :index
+  end
+  resources :relationships, only: [:create, :destroy]
   resources :images
   resources :comments
   resources :like_images
