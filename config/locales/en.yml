@@ -55,4 +55,5 @@ en:
     success_created_image_comment: "コメントが正常に作成されました"
     success_updated_image_comment: "コメントが正常に編集されました"
     success_deleted_image_comment: "コメントが正常に削除されました"
-    success_created_image_like_image: "いいね!しました"
+    success_created_image_like_image: "ライクしました"
+    success_deleted_image_like_image: "アンライクしました"
