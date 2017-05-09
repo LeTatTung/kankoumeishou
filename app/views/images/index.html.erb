@@ -11,13 +11,15 @@
       <div class="col-md-4"> 
         <div class="thumbnail">
           <%= link_to image_tag(img.image), img %>
-          <div class="caption cpt">
-            <%= link_to "編集", edit_image_path(img.id), class: "btn btn-link" %>
-          </div>
-          <div class="caption cpt">
-            <%= link_to "削除", image_path(img.id), method: :delete, data: { confirm: "Are you sure?" },
-              class: "btn btn-link" %>
-          </div>
+          <% if img.user.current_user? current_user %>
+            <div class="caption cpt">
+              <%= link_to "編集", edit_image_path(img.id), class: "btn btn-link" %>
+            </div>
+            <div class="caption cpt">
+              <%= link_to "削除", image_path(img.id), method: :delete, data: { confirm: "Are you sure?" },
+                class: "btn btn-link" %>
+            </div>
+          <% end %>
           <div class="caption">
             <% str = img.description %>
             <div>

@@ -2,11 +2,11 @@
   <%= link_to gravatar_for(image.user, size: 50), image.user %>
   <div class="user"><%= link_to image.user.name, image.user %></div>
   <div class="address">
-    <%= t "image.address" %> : <%= image.address %>
+    <%= t "address" %> : <%= image.address %>
   </div>
-  <div class="category"><%= t "image.category" %> : 
+  <div class="category"><%= t "category" %> : 
     <%= image.category.name %></div>
-  <div class="more"><%= t "image.description" %> : 
+  <div class="more"><%= t "description" %> : 
     <%= image.description %></div>
   <div class="address">
     <%= link_to image_tag(image.image), image %>
