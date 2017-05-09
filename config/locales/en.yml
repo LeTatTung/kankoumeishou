@@ -25,7 +25,8 @@ en:
   address_katakana: "アドレス"
   address: "場所"
   category: "カテゴリー"
-  image: "イメージ"
+  image: "写真"
+  number-images: "写真数 : "
   description: "説明"
   upload_image: "写真をアップロード"
   upload: "アップロード"
@@ -77,21 +78,7 @@ en:
   nice-to: お会い出来て嬉しいです
   news: "新しい"
   change_avatar: "変更アバター"
-  image:
-    address: "場所"
-    address-katakana: "アドレス"
-    category: "カテゴリー"
-    description: "説明"
-    image: "イメージ"
-    number-images: "写真数 : "
-    image-not-found: "Image not found !"
-    message:
-      success_created_image: "Image was successfully created !"
-      success_updated_image: "Image was successfully updated !"
-      success_deleted_image: "Image was successfully deleted !"
-      success_created_image_comment: "Image comment was successfully created !"
-      success_updated_image_comment: "Image comment was successfully updated !"
-      success_deleted_image_comment: "Image comment was successfully deleted !"
+  image-not-found: "Image not found !"
   signup:
     sign-up: サインアップ
   login:

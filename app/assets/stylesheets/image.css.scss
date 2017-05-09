@@ -44,6 +44,8 @@
 
   .col-md-11 {
     font-size: 20px;
+    margin-left: -10px;
+    padding-left: 0px;
   }
 
   .col-md-1 {
@@ -54,6 +56,24 @@
 .show-image-comment {
   margin-top: 120px;
   margin-bottom: 50px;
+
+  .form-create-image {
+    label {
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .row {
+    .col-md-4 {
+      .thumbnail {
+        img {
+          width: 350px;
+          height: 220px;
+        }
+      }
+    }
+  }
 }
 
 .container {
@@ -74,13 +94,18 @@
   input, textarea, select, .uneditable-input {
     border: 1px solid #bbb;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   input {
     height: auto !important;
   }
-  
+
+  .col-md-4 {
+    .user_info {
+      height: 80px;
+    }
+  }
 }
 
 .col-md-8 {
@@ -90,7 +115,12 @@
     padding: 0;
     font-size: 20px;
     a {
-
+      color: #1E90FF;
+      &:hover {
+        background-color: white;
+        text-decoration: none;
+        color: #008686;
+      }
     }
 
     li {
@@ -130,6 +160,11 @@
       display: block;
       margin-left: 60px;
       margin-bottom: 5px;
+
+      a {
+        font-weight: bolder;
+        font-size: 20px;
+      }
     }
     .gravatar {
       float: left;

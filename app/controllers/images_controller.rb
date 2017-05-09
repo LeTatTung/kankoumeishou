@@ -3,7 +3,6 @@ class ImagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    @images = Image.all
   end
 
   def show
@@ -55,6 +54,21 @@ class ImagesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to images_url, notice: t("message.success_deleted_image") }
       format.json { head :no_content }
+    end
+  end
+
+  def search
+    unless params[:q].blank?
+      @images = Image.search_address(params[:q][:address]).order_by_created_at
+      if @images.empty?
+        flash[:warning] = t "image-not-found"
+        redirect_to root_url
+      else
+        render :index
+      end
+    else
+      @images = Image.all.paginate(:page => params[:page])
+      render :index
     end
   end
 

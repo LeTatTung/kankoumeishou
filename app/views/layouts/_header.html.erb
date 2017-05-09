@@ -1,10 +1,18 @@
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top ltt-navbar">
-  <div class="container">
+  <div class="container header-new">
     <div class="navbar-header page-scroll">
       <p id="title", class="navbar-brand page-scroll">
         <%= link_to t(:title), root_url, class: "navbar-brand page-scroll ltt-title" %>
       </p>
     </div>
+    <%= search_form_for @q, url: search_images_path, html: { method: :post }  do |f| %>
+      <div class="text-search col-md-4 ui search">
+        <%= f.text_field :address, id: "search", placeholder: t("action.search") %>
+      </div>
+      <div class="search-button col-md-1">
+        <%= f.submit "", class: "btn" %>
+      </div>
+    <% end %>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden">
@@ -16,7 +24,7 @@
         <li class="ltt-header-item" id="_image_share">
           <%= link_to t(:image_share), "#image_share", class: "page-scroll" %>
         </li>
-        <% if current_user.nil? || request.fullpath == root_path %>
+        <% unless current_user %>
           <li class="ltt-header-item" id="_about">
             <%= link_to t(:about), "#about", class: "page-scroll" %>
           </li>
@@ -25,7 +33,11 @@
         <li class="active ltt-header-item" id="_menu_action">
           <a href="#" class="dropdown-toggle page-scroll" data-toggle="dropdown"
             title="<%= current_user.name %>">
-            <%= current_user.name %>
+            <% if current_user.name.length > 10 %>
+              <%= truncate current_user.name, length: 10 %>
+            <% else %>
+              <%= current_user.name %>
+            <% end %>
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
@@ -38,6 +50,7 @@
             </li>
             <li class="divider"></li>
             <li>
+              <%= link_to t(:about), "#about" %>
               <%= link_to t("sessions.sign_out"),
                 destroy_user_session_path, method: :delete %>
             </li>

@@ -7,6 +7,7 @@
         <%= @user.name %>
         <% if @user.current_user? current_user %>
           <span><%= link_to t("user.new-image"), new_image_path %></span>
+          <span><%= link_to t("action.edit"), edit_user_path(current_user) %></span>
         <% end %>
       </h1>
     </section>
@@ -17,7 +18,7 @@
   <div class="col-md-8">
     <%= render "follow_form" if logged_in? %>
     <% if @user.images.any? %>
-      <h3><%= t "image.number-images" %><%= @user.images.count %></h3>
+      <h3><%= t "number-images" %><%= @user.images.count %></h3>
       <div class="images">
         <%= render @images %>
       </div>
@@ -26,4 +27,4 @@
   </div>
 </div>
 <%= render "pages/image_share" %>
-<%= render "pages/about" if request.fullpath == root_path %>
+<%= render "pages/about" %>

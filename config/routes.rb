@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     resources :relationships, only: :index
   end
   resources :relationships, only: [:create, :destroy]
-  resources :images
+  resources :images do
+    collection do
+      match "search" => "images#search", via: [:get, :post], as: :search
+    end
+  end
   resources :comments
   resources :like_images
 end
