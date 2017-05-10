@@ -23,6 +23,8 @@ class User < ApplicationRecord
   # validates_length_of :password, within: Devise.password_length,
   #   allow_blank: true
 
+  enum sex: [:male, :female]
+
   def feed
     Image.images_feed(self).order_by_created_at
   end
