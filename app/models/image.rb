@@ -13,7 +13,6 @@ class Image < ApplicationRecord
   scope :order_by_created_at, ->{order created_at: :desc}
   scope :search_address, -> key{where("address LIKE ? OR description LIKE ?", "%#{key}%", "%#{key}%") if key.present?}
   scope :images_feed, ->user{where user_id: user.following_ids << user.id}
-  scope :popular_images, -> {order like_number: :desc, id: :desc}
 
   mount_uploader :image, ImageUploader
 

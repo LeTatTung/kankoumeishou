@@ -2,16 +2,15 @@
   <div class="ltt-header">
     <%= render "header_homepage" %>
   </div>
-  <div class="ltt-home-background">
-    <div class="container">
-      <div class="intro-text">
-      <div class="intro-lead-in"><%= t :welcome %></div>
-        <div class="intro-heading"><%= t :nice_to %></div>
-      </div>
+<% end %>
+<div class="ltt-home-background">
+  <div class="container">
+    <div class="intro-text">
+    <div class="intro-lead-in"><%= t :welcome %></div>
+      <div class="intro-heading"><%= t :nice_to %></div>
     </div>
   </div>
+</div>
 
-  <%= render "about" %>
-<% else %>
-  <%= render "image_share" %>
-<% end %>
+<%= render "image_share" %>
+<%= render "about" %>

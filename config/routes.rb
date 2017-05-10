@@ -20,5 +20,4 @@ Rails.application.routes.draw do
   resources :comments do
     resources :reply_comments, except: :show
   end
-  resources :popular_images, only: :index
 end
