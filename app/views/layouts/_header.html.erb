@@ -2,7 +2,8 @@
   <div class="container header-new">
     <div class="navbar-header page-scroll">
       <p id="title", class="navbar-brand page-scroll">
-        <%= link_to t(:title), root_url, class: "navbar-brand page-scroll ltt-title" %>
+        <%= link_to t(:title), root_url,
+          class: "navbar-brand page-scroll ltt-title" %>
       </p>
     </div>
     <%= search_form_for @q, url: search_images_path, html: { method: :post }  do |f| %>
