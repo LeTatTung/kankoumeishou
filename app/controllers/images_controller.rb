@@ -16,12 +16,14 @@ class ImagesController < ApplicationController
   def new
     @image = Image.new
     @categories = Category.all
+    @images = Image.popular_images
   end
 
   def edit
     @categories = Category.all
+    @images = current_user.images
   end
-  
+
   def create
     @image = Image.new(image_params)
     @image.user_id = current_user.id
@@ -37,7 +39,7 @@ class ImagesController < ApplicationController
       end
     end
   end
-  
+
   def update
     respond_to do |format|
       if @image.update(image_params)

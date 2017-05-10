@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @images = @user.images
   end
 
   def update
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
     flash[:success] = t "user_deleted"
     redirect_to users_url
   end
-  
+
   private
   def user_params
     params.require(:user).permit :name, :email, :password,
