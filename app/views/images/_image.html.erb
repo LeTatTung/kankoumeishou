@@ -1,24 +1,27 @@
-<div id="image-<%= image.id %>">
+<div id="image-<%= image.id %>" class="image-show">
   <%= link_to gravatar_for(image.user, size: 50), image.user %>
   <div class="user"><%= link_to image.user.name, image.user %></div>
   <div class="address">
     <%= t "address" %> : <%= image.address %>
   </div>
-  <div class="category"><%= t "category" %> : 
+  <div class="category"><%= t "category" %> :
     <%= image.category.name %></div>
-  <div class="more"><%= t "description" %> : 
+  <div class="more"><%= t "description" %> :
     <%= image.description %></div>
-  <div class="address">
-    <%= link_to image_tag(image.image), image %>
+  <div>
+    <%= link_to image do %>
+      <%= image_tag image.image_url, class: "image-show-img" %>
+    <% end %>
   </div>
   <div class="timestamp">
     <%= t "posted" %>
     <%= time_ago_in_words image.created_at %>
     <%= t "ago" %>
     <% if image.user.current_user? current_user %>
-      <%= link_to t("action.edit"), edit_image_path(image) %> | 
+      <%= link_to t("action.edit"), edit_image_path(image) %> |
       <%= link_to t("action.delete"), image, method: :delete,
         data: {confirm: t("you_sure")} %>
     <% end %>
   </div>
+  <div class="clearfix"></div>
 </div>

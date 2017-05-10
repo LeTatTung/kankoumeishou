@@ -12,6 +12,10 @@
   <body>
     <% if user_signed_in? %>
       <div class="ltt-header">
+        <%= render "layouts/signed_header" %>
+      </div>
+    <% else %>
+      <div class="ltt-header">
         <%= render "layouts/header" %>
       </div>
     <% end %>

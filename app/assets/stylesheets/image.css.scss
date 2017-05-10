@@ -55,7 +55,6 @@
 
 .show-image-comment {
   margin-top: 120px;
-  margin-bottom: 50px;
 
   .form-create-image {
     label {
@@ -74,6 +73,29 @@
       }
     }
   }
+
+  .images-comment-icon {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.image-comment-form {
+  .img-avatar-comment {
+    height: 35px;
+    width: 35px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .comment-form-content {
+    overflow: hidden;
+  }
+
+  .form-control {
+    width: 80%;
+  }
 }
 
 .container {
@@ -83,7 +105,7 @@
     .lead {
       font-size: 24px;
     }
-  } 
+  }
 }
 
 .show-user-info {
@@ -171,6 +193,63 @@
       margin-right: 10px;
       margin-top: 5px;
       margin-bottom: 5px;
+    }
+  }
+}
+.images {
+   .images-comments {
+    cursor: pointer;
+    margin-right: 10px;
+
+    .images-comment-icon {
+      height: 30px;
+      width: 30px;
+    }
+
+    .image-comment-edit-form {
+      display: none;
+
+      .comment-edit-btn-cancel {
+        color: #428bca;
+      }
+    }
+  }
+
+  .image-comment-form {
+    display: block;
+
+    .img-avatar-comment {
+      height: 40px !important;
+      width: 40px !important;
+      float: left;
+      display: block;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      margin-right: 10px;
+    }
+
+    .comment-form-content {
+      overflow: hidden;
+      width: 90%;
+      height: 40px !important;
+    }
+  }
+}
+
+.ltt-wall {
+  padding-top: 30px;
+}
+
+.popular-images {
+  padding-top: 150px;
+}
+
+.images-wall {
+  .image-show {
+    margin-bottom: 30px;
+
+    .image-show-img {
+      height: 400px;
+      width: 500px;
     }
   }
 }
