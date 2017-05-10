@@ -8,7 +8,7 @@ class Image < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true
   validates :image, presence: true
-  validate  :picture_size
+  validate :picture_size
 
   scope :order_by_created_at, ->{order created_at: :desc}
   scope :search_address, -> key{where("address LIKE ? OR description LIKE ?", "%#{key}%", "%#{key}%") if key.present?}

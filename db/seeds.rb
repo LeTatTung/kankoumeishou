@@ -11,7 +11,7 @@ User.create! name: "カオ・ヴァン・ミン", email: "minhcvbachkhoa@gmail.c
 User.create! name: "レー・タット・トゥン", email: "tunglt@gmail.com",
   password: "tunglt", password_confirmation: "tunglt", admin: true
 
-20.times do |n|
+50.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -24,7 +24,7 @@ Category.create!([{name: "山岳"}, {name: "洞窟"}, {name: "海"}])
 #image url : /uploads/image/image/3/anh-dep-thien-nhien-day-lang-man-1.jpg
 users = User.all
 user = users.first
-following = users[2..15]
-followers = users[3..10]
+following = users[2..40]
+followers = users[3..30]
 following.each {|followed| user.follow followed}
 followers.each {|follower| follower.follow user}

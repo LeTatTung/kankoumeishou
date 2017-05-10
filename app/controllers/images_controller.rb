@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
+    @images = current_user.images
   end
 
   def show
