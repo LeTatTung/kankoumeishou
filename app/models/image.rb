@@ -2,7 +2,7 @@ class Image < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  has_many :comment, -> { order "created_at DESC"}
+  has_many :comments, dependent: :destroy
   has_many :like_images, dependent: :destroy
   validates :user, presence: true
   validates :address, presence: true
@@ -15,6 +15,10 @@ class Image < ApplicationRecord
   scope :images_feed, ->user{where user_id: user.following_ids << user.id}
 
   mount_uploader :image, ImageUploader
+
+  def main_comments
+    comments.where(parent_id: nil).order id: :desc
+  end
 
   private
   def picture_size

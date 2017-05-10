@@ -1,129 +1,115 @@
-<% unless logged_in? %>
-  <div class="ltt-header">
-    <%= render "pages/header_homepage" %>
-  </div>
-<% end %>
-<div class="container show-image-comment">
-  <p id="notice"><%= notice %></p>
-
-  <div class="form-group-lg">
-    <div class="show-address">
-      <%= @image.address %>
-    </div>
-    <div class="show-info">
-      <%= t "upload_by" %> : 
-      <%= link_to @image.user.name, "#", class: "btn-link" %>
-    </div>
-    <div class="show-info">
-      <%= t "description" %> : 
-      <% if @image.description.length > 100 %>
-        <%= truncate @image.description, length: 100 %>
-        <%= link_to "read more", "", class: "read-more-#{@image.id} btn-link" %>
-        <script>
-          $(".read-more-<%= @image.id %>").on("click", function(e) {
-            e.preventDefault()
-            $(this).parent().html("<%= t "description" %> : <%= escape_javascript @image.description %>")
-          })
-        </script>
-      <% else %>
-        <%= @image.description %>
-      <% end %>
-    </div>
-    <div class="show-image">
-      <%= image_tag @image.image, class: "img-responsive img-rounded" %>
-    </div>
-    <div class="col-md-3"></div>
-    <div class="show-like col-md-3">
-      <% if logged_in? %>
-        <% if LikeImage.where(user_id: current_user.id, image_id: @image.id).exists? %><!-- if current user liked this image -->
-          <% LikeImage.where(user_id: current_user.id, image_id: @image.id).each do |like| %>
-            <%= link_to t("dislike"), like_image_path(like.id), method: :delete, class: "btn btn-success" %>                       <!-- cannot like anymore -->
-          <% end %>
-        <% else %>
-        <%= form_for(@like_image) do |f| %>
-          <%= f.hidden_field :image_id, value: @image.id %>
-          <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
-          <% end %>
-        <% end %>
-      <% else %>                                                                      <!-- if current user haven't liked this image -->
-        <%= form_for(@like_image) do |f| %>
-         <%= f.hidden_field :image_id, value: @image.id %>
-         <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
-        <% end %>
-      <% end %>
-    </div>
-    <div class="show-category col-md-6">
-      <%= t "category" %> : 
-      <%= link_to @image.category.name, "#", class: "btn-link" %>
-    </div>
-    <div class="show-info show-number-like">
-      <%= t "like_number" %> : 
-      <%= link_to @image.like_number, "#", class: "btn-link" %>
-    </div>
-  </div>
-  
-  <div class="actions">
-    <% if current_user == @image.user %>
-      <%= link_to t("edit"), edit_image_path(@image),
-        class: "btn btn-info" %>
-    <% end %>
-    <%= link_to t("back"), images_path, class: "btn btn-info" %>
-  </div>
-  <h2><%= t "comment" %></h2>
-  <%= form_for(@comment) do |f| %>
-    <div class="form-group form-group-lg">
-      <div class="field col-sm-5 control-label" >
-        <div class="col-xs-50" >
-          <%= f.text_field :content, class: "form-control" %>
-        </div>
-        <%= f.hidden_field :image_id, value: @image.id %>
-        <%= f.hidden_field :parent_id, value: 0 %>
-      </div>
-      <div class="action" >
-        <%= f.submit t("comment"), class: "btn btn-primary" %>
-      </div>
+<div class="container">
+  <% unless logged_in? %>
+    <div class="ltt-header">
+      <%= render "pages/header_homepage" %>
     </div>
   <% end %>
-  <br>
-  <div class="show-comment">
-    <h2><%= t "list_comments" %></h2>
-    <% @image.comment.each do |image_comment| %>
-      <div class="show-parent-comment">
-        <div class="col-md-1">
-          <%= gravatar_for image_comment.user, size: 40 %>
-        </div>
-        <div class="col-md-11"><%= image_comment.user.name %> : 
-          <%= image_comment.content %></div>
-        <br><br>
-        <div class="action">
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-          <%= link_to t("like"), "#", class: "btn btn-link" %>
-          <i class="fa fa-reply" aria-hidden="true"></i>
-          <%= link_to t("reply"), "#", class: "btn btn-link" %>
-        </div>
-        </br>
+  <div class="show-image-comment">
+    <p id="notice"><%= notice %></p>
+
+    <div class="form-group-lg">
+      <div class="show-address">
+        <%= @image.address %>
       </div>
-      <% if @reply %>
-        <div class="show-reply-comment">
-          <%= @reply.comment.each do |reply| %>
-            <% unless reply.user.avatar %>
-              <div class="show-avatar-comment">
-                <%= image_tag "profile.jpg" %></div>
-            <% else %>
-              <div class="show-avatar-comment">
-                <%= image_tag reply.user.avatar %></div>
+      <div class="show-info">
+        <%= t "upload_by" %> :
+        <%= link_to @image.user.name, "#", class: "btn-link" %>
+      </div>
+      <div class="show-info">
+        <%= t "description" %> :
+        <% if @image.description.length > 100 %>
+          <%= truncate @image.description, length: 100 %>
+          <%= link_to "read more", "", class: "read-more-#{@image.id} btn-link" %>
+          <script>
+            $(".read-more-<%= @image.id %>").on("click", function(e) {
+              e.preventDefault()
+              $(this).parent().html("<%= t "description" %> : <%= escape_javascript @image.description %>")
+            })
+          </script>
+        <% else %>
+          <%= @image.description %>
+        <% end %>
+      </div>
+      <div class="show-image">
+        <%= image_tag @image.image, class: "img-responsive img-rounded" %>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="show-like col-md-3">
+        <% if logged_in? %>
+          <% if LikeImage.where(user_id: current_user.id, image_id: @image.id).exists? %><!-- if current user liked this image -->
+            <% LikeImage.where(user_id: current_user.id, image_id: @image.id).each do |like| %>
+              <%= link_to t("dislike"), like_image_path(like.id), method: :delete, class: "btn btn-success" %>                       <!-- cannot like anymore -->
             <% end %>
-            <strong><%= reply.user.name %> : </strong>
-            <%= reply.content %>
-            <br>
-            <div class="action">
-              <%= link_to t("like"), "#", class: "btn btn-link" %>
-            </div>
+          <% else %>
+          <%= form_for(@like_image) do |f| %>
+            <%= f.hidden_field :image_id, value: @image.id %>
+            <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
+            <% end %>
           <% end %>
-        </div>
+        <% else %>                                                                      <!-- if current user haven't liked this image -->
+          <%= form_for(@like_image) do |f| %>
+           <%= f.hidden_field :image_id, value: @image.id %>
+           <%= f.submit t("like"), class: "btn btn-primary" %>                          <!-- like button -->
+          <% end %>
+        <% end %>
+      </div>
+      <div class="show-category col-md-6">
+        <%= t "category" %> :
+        <%= link_to @image.category.name, "#", class: "btn-link" %>
+      </div>
+      <div class="show-info show-number-like">
+        <%= t "like_number" %> :
+        <%= link_to @image.like_number, "#", class: "btn-link" %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <% if current_user == @image.user %>
+        <%= link_to t("edit"), edit_image_path(@image),
+          class: "btn btn-info" %>
       <% end %>
+      <%= link_to t("back"), images_path, class: "btn btn-info" %>
+    </div>
+    <span class="images-comments">
+      <%= image_tag "comment.png", class: "images-comment-icon" %>
+      <span id="comment-size-<%= @image.id %>">
+        <%= @image.main_comments.size %>
+      </span>
+      コメント
+    </span>
+    <hr>
+  </div>
+  <div class="image-comment-form">
+    <%= form_for [@image, Comment.new], remote: true do |f| %>
+      <span>
+        <span>
+          <%= image_tag avatar_profile(current_user),
+            class: "img-avatar-comment" %>
+        </span>
+        <span>
+          <%= f.text_field :content, placeholder: "何かを書いて",
+            class: "form-control comment-form-content",
+            id: "image-comment-form-content-#{@image.id}" %>
+        </span>
+      </span>
+    <% end %>
+    <hr>
+  </div>
+
+  <div class="images-comments" id="images-comments-<%= @image.id %>">
+    <% image_comments = @image.main_comments.offset(0)
+      .limit Settings.load_more_comment_size %>
+    <% image_comments.each do |comment| %>
+      <%= render "comments/comment", comment: comment %>
+      <%= render "comments/edit_form", image: @image, comment: comment %>
     <% end %>
   </div>
+  <div id="load-more-image-comments-<%= @image.id %>">
+    <% unless image_comments.empty? %>
+      <%= link_to "コメントをもっと見る", image_comments_path(@image,
+        comment_offset: image_comments.last.id), remote: true %>
+    <% end %>
+  </div>
+  <%= render "pages/image_share" %>
+  <%= render "pages/about" %>
 </div>
-<%= render "pages/image_share" %>
-<%= render "pages/about" %>
