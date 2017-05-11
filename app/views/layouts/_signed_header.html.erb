@@ -1,19 +1,27 @@
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top ltt-navbar">
   <div class="container header-new">
-    <div class="navbar-header page-scroll">
-      <p id="title", class="navbar-brand page-scroll">
-        <%= link_to t(:title), root_url, class: "navbar-brand page-scroll ltt-title" %>
-      </p>
+    <div class="header-left navbar-header page-scroll col-md-7">
+      <ul class="nav navbar-nav">
+        <li id="title" class="navbar-brand page-scroll">
+          <%= link_to t(:title), root_url, class: "navbar-brand page-scroll ltt-title" %>
+        </li>
+        <li class="header-search">
+          <%= form_tag searches_path, method: :get do %>
+            <span>
+              <%= text_field_tag :search, params[:search],
+                placeholder: "写真の情報を入力してください", class: "form-control
+                images-search", id: "images-search" %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+          <% end %>
+          <span class="search-results">
+            <ul class="results">
+            </ul>
+          </span>
+        </li>
+      </ul>
     </div>
-    <%= search_form_for @q, url: search_images_path, html: { method: :post }  do |f| %>
-      <div class="text-search col-md-4 ui search">
-        <%= f.text_field :address, id: "search", placeholder: t("action.search") %>
-      </div>
-      <div class="search-button col-md-1">
-        <%= f.submit "", class: "btn" %>
-      </div>
-    <% end %>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse col-md-5" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden">
           <a href="#page-top"></a>

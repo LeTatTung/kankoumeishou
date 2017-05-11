@@ -1,11 +1,21 @@
 <div id="image-<%= image.id %>" class="image-show">
-  <%= link_to gravatar_for(image.user, size: 50), image.user %>
-  <div class="user"><%= link_to image.user.name, image.user %></div>
+  <span>
+    <span>
+      <%= link_to image.user do %>
+        <%= image_tag avatar_profile(image.user), class: "image-user-profile" %>
+      <% end %>
+    </span>
+    <span class="user"><%= link_to image.user.name, image.user %></span>
+  </span>
   <div class="address">
-    <%= t "address" %> : <%= image.address %>
+    <span><b>アドレス: </b></span>
+    <%= link_to image.address, images_path(address: image.address) %>
   </div>
-  <div class="category"><%= t "category" %> :
-    <%= image.category.name %></div>
+  <div class="category">
+    <span><b>カテゴリ: </b></span>
+    <%= link_to image.category.name, images_path(
+      category: image.category.id) %>
+  </div>
   <div class="more"><%= t "description" %> :
     <%= image.description %></div>
   <div>

@@ -11,7 +11,6 @@ class Image < ApplicationRecord
   validate :picture_size
 
   scope :order_by_created_at, ->{order created_at: :desc}
-  scope :search_address, -> key{where("address LIKE ? OR description LIKE ?", "%#{key}%", "%#{key}%") if key.present?}
   scope :images_feed, ->user{where user_id: user.following_ids << user.id}
   scope :popular_images, -> {order like_number: :desc, id: :desc}
 
@@ -19,6 +18,14 @@ class Image < ApplicationRecord
 
   def main_comments
     comments.where(parent_id: nil).order id: :desc
+  end
+
+  class << self
+    def search data
+      data = data.downcase
+      Image.where "lower(description) LIKE ? OR
+        lower(address) LIKE ?", "%#{data}%", "%#{data}%"
+    end
   end
 
   private

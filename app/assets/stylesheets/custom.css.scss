@@ -208,7 +208,7 @@ aside {
 }
 
 .edit_user {
-  
+
   label {
     font-size: 20px;
     margin-bottom: 10px;
@@ -220,46 +220,16 @@ aside {
   }
 }
 
-.text-search {
-  margin-left: -40px;
-  margin-top: 40px;
-  border: 0px;
-  
-  #search {
-    border: 0px;
-    margin: 0px;
-    width: 320px;
-    height: 30px !important;
-    font-size: 1.5em;
-  } 
-}
-  
-.search-button {
-  margin-left: -100px;
-  margin-top: 40px;
-  width: 35px;
-  height: 30px;
-  
-  input {
-    height: 30px !important;
-    width: 35px;
-    background-image: url("search_icon.png");
-    background-size: 35px 30px;
-    background-color: white;
-    border: 0px;
-  }
-}
-
 .header-new {
   .navbar-header {
     .navbar-brand {
-      
+
     }
   }
 
   .navbar-collapse {
     ul {
-     
+
     }
   }
 }

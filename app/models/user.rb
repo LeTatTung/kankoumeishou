@@ -19,9 +19,10 @@ class User < ApplicationRecord
     if: :email_changed?
   # validates_presence_of :password, if: :password_required?
   # validates_confirmation_of :password, if: :password_required?
-  validates :password, presence: true, length: { minimum: 6 }
+  # validates :password, presence: true, length: { minimum: 6 }
   # validates_length_of :password, within: Devise.password_length,
   #   allow_blank: true
+  mount_uploader :avatar, AvatarUploader
 
   enum sex: [:male, :female]
 
@@ -45,5 +46,12 @@ class User < ApplicationRecord
 
   def current_user? user
     self == user
+  end
+
+  class << self
+    def search data
+      data = data.downcase
+      User.where "lower(name) LIKE ?", "%#{data}%"
+    end
   end
 end
