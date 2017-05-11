@@ -19,12 +19,10 @@
     <%= render "follow_form" if logged_in? %>
     <% if @user.images.any? %>
       <h3><%= t "number-images" %><%= @user.images.count %></h3>
-      <div class="images">
+      <div class="images-user-profile">
         <%= render @images %>
       </div>
       <%= will_paginate @images %>
     <% end %>
   </div>
 </div>
-<%= render "pages/image_share" %>
-<%= render "pages/about" %>
