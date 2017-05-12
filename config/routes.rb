@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :images do
-    collection do
-      match "search" => "images#search", via: [:get, :post], as: :search
-    end
     resources :comments, except: :show
   end
   resources :like_images
@@ -21,4 +18,5 @@ Rails.application.routes.draw do
     resources :reply_comments, except: :show
   end
   resources :popular_images, only: :index
+  resources :searches, only: :index
 end

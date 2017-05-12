@@ -47,7 +47,7 @@ en:
   list_comments: "コメント一覧"
   nickname: "ニックネーム : "
   email: "電子メイル"
-  password: "パスワード" 
+  password: "パスワード"
   like: "いいね!"
   dislike: "嫌い"
   message:
@@ -98,7 +98,7 @@ en:
     show: "表わす"
     update: "アップデイト"
     upload: "アップロード"
-    search: "サーチ"
+    search: "検索"
   user:
     edit-user: "更新ユーザー"
     like-numbers: "好きな数"

@@ -8,8 +8,8 @@ module ApplicationHelper
   end
 
   def avatar_profile user
-    if user && user.avatar
-      user.avatar
+    if user && user.avatar_url
+      user.avatar_url
     else
       "#{user.sex}.png"
     end

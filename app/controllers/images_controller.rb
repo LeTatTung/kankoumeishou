@@ -3,7 +3,22 @@ class ImagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    @images = current_user.images
+    @images = if params[:address]
+      Image.search(params[:address]).order(id: :desc) if params[:address]
+    elsif params[:category]
+      category =  Category.find_by id: params[:category]
+      category.images.order(id: :desc) if category
+    else
+      current_user.images_news_feed
+    end
+    unless @images.empty?
+      @images = current_user.images
+    end
+
+    respond_to do |format|
+      format.html {load_data_static}
+      format.js
+    end
   end
 
   def show
@@ -57,21 +72,6 @@ class ImagesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to images_url, notice: t("message.success_deleted_image") }
       format.json { head :no_content }
-    end
-  end
-
-  def search
-    unless params[:q].blank?
-      @images = Image.search_address(params[:q][:address]).order_by_created_at
-      if @images.empty?
-        flash[:warning] = t "image-not-found"
-        redirect_to root_url
-      else
-        render :index
-      end
-    else
-      @images = Image.all.paginate(:page => params[:page])
-      render :index
     end
   end
 

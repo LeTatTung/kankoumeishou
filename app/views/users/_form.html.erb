@@ -1,16 +1,39 @@
-<%= form_for @user do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
-  <%= f.label :name, t("name") %>
-  <%= f.text_field :name, class: "form-control" %>
+<div class="user-form">
+  <%= form_for @user, method: :patch, remote: true do |f| %>
+    <div class="user-form-errors">
+      <%= render "shared/error_messages", object: @user %>
+    </div>
 
-  <%= f.label :email, t("email") %>
-  <%= f.email_field :email, class: "form-control" %>
+    <div class="user-avatar">
+      <span><%= image_tag avatar_profile(@user), class: "image-user-profile" %></span>
+      <span><%= f.file_field :avatar, class: "avatar-file-field" %></span>
+    </div>
 
-  <%= f.label :password, t("password") %>
-  <%= f.password_field :password, class: "form-control" %>
+    <%= f.label "メイル" %>
+    <label class="field form-control" readonly>
+      <%= @user.email %>
+    </label>
 
-  <%= f.label :password_confirmation, t("confirmation") %>
-  <%= f.password_field :password_confirmation, class: "form-control" %>
+    <div class="field">
+      <%= f.label "名前" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary btn-lg" %>
-<% end %>
+    <div class="field">
+      <label><%= f.radio_button :sex, "male", checked: true %>
+        男性
+      </label
+      <label><%= f.radio_button :sex, "female" %>
+        女性
+      </label>
+    </div>
+
+    <span class="user-form-submit">
+      <%= f.submit "保存", class: "btn btn-primary btn-create btn-lg" %>
+      <button class="btn btn-danger btn-cancel btn-lg">
+        キャンセル
+      </button>
+    </div>
+    <div class="clearfix"></div>
+  <% end %>
+</div>
