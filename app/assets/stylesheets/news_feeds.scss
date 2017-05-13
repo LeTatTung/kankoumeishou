@@ -16,6 +16,7 @@
     background-color: white;
     width: 100%;
     min-height: 70px;
+    padding: 50px;
 
     .load-more-news-feed {
       text-align: center;
@@ -45,6 +46,18 @@
           border: none;
         }
       }
+    }
+  }
+}
+.images-content {
+
+  padding-top: 50px;
+  .image-show {
+    margin-bottom: 50px;
+
+    .image-show-img {
+      height: 400px;
+      width: 550px;
     }
   }
 }

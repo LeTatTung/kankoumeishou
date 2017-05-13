@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit :email,
+      :name, :password, :password_confirmation, :sex, :avatar}
+  end
+
   private
   def logged_in_user
     unless logged_in?
