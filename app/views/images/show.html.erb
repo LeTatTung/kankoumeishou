@@ -13,7 +13,7 @@
       </div>
       <div class="show-info">
         <%= t "upload_by" %> :
-        <%= link_to @image.user.name, "#", class: "btn-link" %>
+        <%= link_to @image.user.name, @image.user, class: "btn-link" %>
       </div>
       <div class="show-info">
         <%= t "description" %> :

@@ -1,6 +1,9 @@
 class SearchesController < ApplicationController
   def index
-    unless params[:search].blank?
+    if params[:search].blank?
+      flash[:warning] = "Search can not be empty !"
+      redirect_to root_path
+    else
       @images = Image.search(params[:search]) || Array.new
       @users = User.search(params[:search]) || Array.new
       @addresses = Image.search(params[:search]).distinct

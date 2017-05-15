@@ -378,6 +378,13 @@
     .images-body-category {
       margin-bottom: 10px;
     }
+
+    .images-body-image {
+      img {
+        width: 320px;
+        height: 170px;
+      }
+    }
   }
 
   .images-footer {
@@ -510,5 +517,11 @@
 
   .share-submit {
     float: right;
+  }
+}
+
+.user-index-pagination {
+  .pagination {
+    margin-left: 45px !important;
   }
 }

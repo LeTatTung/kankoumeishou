@@ -26,7 +26,7 @@
         <li class="hidden">
           <a href="#page-top"></a>
         </li>
-        <li class="active ltt-header-item" id="_home">
+        <li class="active ltt-header-item signed-in" id="_home">
           <%= link_to t(:home), root_path, class: "page-scroll" %>
         </li>
         <li class="ltt-header-item" id="_image_share">
@@ -36,8 +36,8 @@
         <li class="active ltt-header-item" id="_menu_action">
           <a href="#" class="dropdown-toggle page-scroll" data-toggle="dropdown"
             title="<%= current_user.name %>">
-            <% if current_user.name.length > 10 %>
-              <%= truncate current_user.name, length: 10 %>
+            <% if current_user.name.length > 15 %>
+              <%= truncate current_user.name, length: 15 %>
             <% else %>
               <%= current_user.name %>
             <% end %>

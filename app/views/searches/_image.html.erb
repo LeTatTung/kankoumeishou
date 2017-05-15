@@ -40,5 +40,10 @@
       <%= link_to image.category.name, images_path(
         category: image.category.id) %>
     </div>
+
+    <div class="images-body-image">
+      <b>写真: </b><br>
+      <%= link_to image_tag(image.image), image_path(image) %>
+    </div>
   </div>
 </div>
