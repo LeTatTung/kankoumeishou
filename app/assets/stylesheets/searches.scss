@@ -1,4 +1,8 @@
 .searches {
+  list-style: none;
+  margin-top: 120px;
+  padding-left: 0px !important;
+
   h2 {
     padding: 0;
     padding-top: 5px;
@@ -12,28 +16,48 @@
     margin-top: 5px !important;
     margin-bottom: 5px !important
   }
+  .search-image {
+    ul {
+      list-style: none;
+
+      .images {
+
+      }
+    }
+  }
 
   .search-user {
     width: 100%;
     padding: 20px;
     padding-bottom: 0px;
     padding-top: 0px;
-
-    .search-user-img {
-      display: blok;
-      float: left;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-
-      .user-img {
-        height: 50px;
-        width: 50px;
+    ul {
+      list-style: none;
+      .col-md-6 {
+        margin-bottom: 10px;
       }
-    }
 
-    .search-user-str {
-      overflow: hidden;
-      vertical-align: middle;
-      line-height: 50px;
+      .search-user-img {
+        display: blok;
+        float: left;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        .user-img {
+          height: 50px;
+          width: 50px;
+        }
+      }
+
+      .search-user-str {
+        color: #428bca;
+        overflow: hidden;
+        vertical-align: middle;
+        line-height: 50px;
+        &:hover {
+          color: gray;
+          background-color: white;
+        }
+      }
     }
   }
 
@@ -41,6 +65,9 @@
     .search-address-str {
       padding-left: 10px;
       padding-top: 10px;
+      &:hover {
+        color: green;
+      }
     }
   }
 
@@ -48,6 +75,21 @@
     .search-category-str {
       padding-left: 100px;
       padding-top: 100px;
+    }
+  }
+}
+
+.header-search {
+  .search-results {
+    .results {
+      li {
+        .images-search-str {
+          color: black;
+          &:hover{
+            color: yellow;
+          }
+        }
+      }
     }
   }
 }

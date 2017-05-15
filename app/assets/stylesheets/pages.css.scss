@@ -488,6 +488,15 @@ body {
   .navbar-custom .navbar-nav > .active > a {
     border-radius: 3px;
   }
+
+  .navbar-custom .navbar-nav > .signed-in > a {
+    border-radius: 3px;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+      color: #fed136;
+    }
+  }
 }
 @media (min-width: 768px) {
   .navbar-custom.affix {

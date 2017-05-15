@@ -9,10 +9,7 @@ class ImagesController < ApplicationController
       category =  Category.find_by id: params[:category]
       category.images.order(id: :desc) if category
     else
-      current_user.images_news_feed
-    end
-    unless @images.empty?
-      @images = current_user.images
+      current_user.feed
     end
 
     respond_to do |format|

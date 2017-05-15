@@ -19,13 +19,9 @@
       <%= f.text_field :name, class: "form-control" %>
     </div>
 
-    <div class="field">
-      <label><%= f.radio_button :sex, "male", checked: true %>
-        男性
-      </label
-      <label><%= f.radio_button :sex, "female" %>
-        女性
-      </label>
+    <div class="field radio-button">
+      <label><%= f.radio_button :sex, "male", checked: true %>男性</label>
+      <label><%= f.radio_button :sex, "female" %>女性</label>
     </div>
 
     <div class="user-form-submit">
